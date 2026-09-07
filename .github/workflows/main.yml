@@ -3,14 +3,14 @@ name: Sync LeetCode Solutions
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
+    - cron: '0 0 * * *' # Runs automatically every night at midnight UTC
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Sync LeetCode
-        uses: joshcai/leetcode-sync@v1
+        uses: joshcai/leetcode-sync@838d9f14068305c48b259d640244793f0b2f0a06
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
